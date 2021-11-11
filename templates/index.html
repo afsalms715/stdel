@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>standard electricals</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+  </head>
+  <body>
+    <!--navbar-->
+    <div class="container-fluid col-12">
+
+      <nav class="navbar navbar-expand-md bg-light fixed-top" id="navbar">
+              <h2 class="bold ">Standard Electricals<span id="irulam"><br>Irulam</span></h3></h2>
+            
+        <button class="navbar-toggler ms-auto " type="button" id="btn" data-bs-toggle="collapse" data-bs-target="#menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </svg></button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item ms-auto">
+              <a class="nav-link" href="#home">home</a>
+            </li>
+            <li class="nav-item ms-auto">
+               <a class="nav-link" href="#about">about us</a>
+            </li>
+            <li class="nav-item ms-auto">
+               <a class="nav-link" href="#servies">servies</a>
+            </li>
+            <li class="nav-item ms-auto">
+               <a class="nav-link" href="#contact">contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+    
+    
+    <!--home-->
+    
+    <section id="home">
+      <div class="row">
+        <div class="col-md-6 order-1 pt-5">
+         <h1 class="display-5">Welcome To<br><span class="homeh1"> Standard Electricals</span></h1>
+         <p class="my-md-6">Havells India introduces, the first of its kind mobile application in the electrical industry - “Havells Digi Catalogue” mobile app contains product listing of Havells, Standard, Crabtree brands with the advent of net convenience on your mobile phone and personal devices, this application aims to provide users with complete category and product information at their fingertips.</p>
+         <a href="#contact">
+         <button class="btn btn-primary my-3">contact us</button></a>
+        </div>
+        <div class="col-md-6 col-12 py-md-2 py-0 order-sm-2">
+          <img src="{% static 'img1.jpg' %}" class="img-fluid">
+          
+        </div>
+      </div>
+    </section>
+    
+    <!--about us-->
+    
+    <section id="about">
+      <div class="row ">
+          <div class="col-md-6 order-2 " id="about-para">
+         <h6 class="display-5">About Us<span class="homeh1"><br>Standard Electricals Irulam</span></h6>
+         <p class="my-md-6">Havells India introduces, the first of its kind mobile application in the electrical industry - “Havells Digi Catalogue” mobile app contains product listing of Havells, Standard, Crabtree brands with the advent of net convenience on your mobile phone and personal devices, this application aims to provide users with complete category and product information at their fingertips.</p>
+         <a href="#contact">
+         <button class="btn btn-primary my-3 " id="btn-about">about us  </button></a>
+        </div>
+        <div class="col-md-6 col-12 py-md-2 py-0 order-sm-1">
+          <img src="{% static 'img2.jpg'%}" class="img-fluid">
+          
+        </div>
+      
+        
+      </div>
+    </section>
+    
+    
+  <!----services----->  
+  
+  <section id="servies">
+    <div class="row">
+      <h1 class="display-5 text-center pb-5">Our services</h1>
+      {% for object in objects %}
+      <div class="col-md-4 card shadow col-11 ">
+        <div class="inner">
+        <img src={{object.pic.url}}  class="img-fluid" style="height:15rem; margin-top:1rem;">
+        </div>
+          <div class="card-body">
+            <h5 class="card-title">{{object.heading}}</h5>
+            <p class="card-text">
+              {{object.descr}}</p>
+            <a href="#">
+            <button class="btn btn-primary ">more</button></a>
+          </div>
+        </div>
+      {% endfor %}
+
+<!--       <div class="col-md-4 card shadow col-11">-->
+<!--         <div class="inner">-->
+<!--        <img src="{% static 'img5.jpg'%}" class=" img-fluid pt-5 pb-3" >-->
+<!--        </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">WIREING WORK</h5>-->
+<!--            <p class="card-text">-->
+<!--              Havells India introduces, the first of its kind mobile application in the electrical industry - “Havells Digi Catalogue” mobile app contains product listing of Havells, Standard, Crabtree-->
+<!--            </p>-->
+<!--            <a href="#">-->
+<!--            <button class="btn btn-primary mt-3">more</button></a>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--       <div class="col-md-4 card shadow col-11 ">-->
+<!--         <div class="inner">-->
+<!--        <img src="{% static 'img6.jpg'%}" class=" img-fluid pt-4 " >-->
+<!--        </div>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">PLUMBING WORK</h5>-->
+<!--            <p class="card-text mt-2">-->
+<!--              Havells India introduces, the first of its kind mobile application in the electrical industry - “Havells Digi Catalogue” mobile app contains product listing of Havells, Standard, Crabtree-->
+<!--            </p>-->
+<!--            <a href="#">-->
+<!--            <button class="btn btn-primary mt-4">more</button></a>-->
+<!--          </div>-->
+<!--        </div>-->
+      
+    </div>
+  </section>
+  
+  <!---contact--->
+  
+  <section id="contact">
+    <div class="row col-md-8 col-12">
+
+      <form action="submit/" method="post" id="submit-form">
+        {% csrf_token %}
+        <div class="mt-2 text-center pt-2">
+          <h3 class="display-5">Contact </h3>
+        </div>
+        <div class="mt-4">
+          <label class="form-label">Name :</label>
+          <input class="form-control" type="text" name="name" placeholder="enter your name">
+        </div>
+                <div class="mt-2">
+                  <label class="form-label">Email : </label>
+                  <input class="form-control" type="email" name="email" placeholder="enter your email address">
+                </div>
+          <div class="mt-2">
+                  <label class="form-label">Phone No : </label>
+                  <input class="form-control" type="number" name="phNo" placeholder="enter your phone number">
+                </div>
+                        <div class="mt-4 ">
+                          
+                          <button type="submit" class="btn btn-primary  form-control ms-0 mb-4" value="submit">Submit</button>
+                        </div>
+      </form>
+      <div class="text-center pt-4">
+        <h3>contact number :9744165530</h3>
+      </div>
+      
+    </div>
+    
+  </section>
+    
+  </div>
+  
+  <!----footer---->
+  
+  <footer>
+    <div class="row text-center mt-4 p-3" id="footer">
+      <p>copyrighted © standard Electricals</p>
+    </div>
+  </footer>
+    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+  </body>
+</html>
