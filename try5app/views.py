@@ -13,12 +13,13 @@ def submit(request):
     name = request.POST['name']
     emil = request.POST['email']
     phNo = request.POST['phNo']
-    msg=str(name+'\n'+emil+'\n'+phNo)
+    msg="""Subject:Details of client.....\n"""
+    msg+=str(name+'\n'+emil+'\n'+phNo)
     print(msg)
     cnts=contacts(name=name,email=emil,phNo=phNo)
     cnts.save()
     sendemail(msg)
-    sendwhatsup(msg)
+    #sendwhatsup(msg)
     return redirect(fun)
 
 def sendemail(msg):
