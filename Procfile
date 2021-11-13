@@ -1,1 +1,1 @@
-web: gunicorn try5proj.wsgi --log-file -
+web: gunicorn try5proj.wsgi
