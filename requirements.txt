@@ -21,6 +21,8 @@ pywhatkit==5.1
 requests==2.26.0
 soupsieve==2.3
 django-heroku==0.3.1
+python-decouple==3.5
+dj-database-url==0.5.0
 sqlparse==0.4.2
 typing-extensions==3.10.0.2
 urllib3==1.26.7
